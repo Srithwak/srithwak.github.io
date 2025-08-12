@@ -1,1 +1,0 @@
-# srithwak.github.io
