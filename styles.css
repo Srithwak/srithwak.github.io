@@ -32,7 +32,6 @@ body {
               hsl(var(--bg));
   color: hsl(var(--fg));
   line-height: 1.55;
-  /* Optimization: Prevent horizontal scrolling and improve font rendering */
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -88,7 +87,23 @@ body {
 .card + .card { margin-top: 14px; }
 .card-header { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; margin-bottom: 8px; }
 .badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 999px; background: hsl(var(--bg-soft)); border: 1px solid hsl(var(--border)); color: hsl(var(--muted)); font-size: 12px; }
-.tag { display: inline-block; padding: 4px 8px; border-radius: 999px; background: hsl(var(--bg-soft)); border: 1px solid hsl(var(--border)); color: hsl(var(--muted)); font-size: 12px; margin-left: 8px; }
+
+/* Updated .tag and new .tech-stack styles */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.tag {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: hsl(var(--bg-soft));
+  border: 1px solid hsl(var(--border));
+  color: hsl(var(--muted));
+  font-size: 12px;
+}
 .list { margin: 8px 0 0 0; padding-left: 18px; }
 .list li { margin: 6px 0; }
 
@@ -173,7 +188,6 @@ body {
   .section {
     padding: 24px 0;
   }
-  /* Optimization: Prevents awkward spacing on card headers when they wrap */
   .card-header {
     justify-content: flex-start;
   }
@@ -186,7 +200,6 @@ body {
 }
 
 @media (max-width: 420px) {
-  /* Optimization: Prevents hero summary text from causing horizontal overflow */
   .hero-summary .row {
     justify-content: flex-start;
     flex-wrap: wrap;
