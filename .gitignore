@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Operating System
+.DS_Store
+Thumbs.db
+*.log
+
+# Editor
+.vscode/
+.idea/
+
+# Resume/Office temp files
+~$*.docx
+~$*.doc

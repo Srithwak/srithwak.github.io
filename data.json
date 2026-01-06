@@ -1,0 +1,308 @@
+{
+    "config": {
+        "theme": {
+            "primaryColor": "#7b2cbf",
+            "secondaryColor": "#101010",
+            "textColor": "#ffffff"
+        },
+        "particles": {
+            "enabled": true,
+            "color": "#7b2cbf",
+            "countDivider": 6000,
+            "connectionDivider": 5,
+            "mouseRadiusDivider": 80,
+            "bounceForce": 0.1
+        }
+    },
+    "profile": {
+        "name": "Rithwak Somepalli",
+        "title": "AI/ML • Full‑Stack Developer",
+        "location": "Atlanta, GA",
+        "status": "Open to internships and projects",
+        "email": "srithwak@gmail.com",
+        "social": {
+            "github": "https://github.com/Srithwak",
+            "linkedin": "https://www.linkedin.com/in/rithwak-somepalli-8987b6321/"
+        },
+        "hero_summary": {
+            "current": "Twin Brain Intern",
+            "focus": "AI • Data Pipelines • React"
+        },
+        "resume_file": "One_Pager.docx"
+    },
+    "experience": [
+        {
+            "company": "Twin Brain",
+            "role": "Internship",
+            "period": "June 2025 – Present",
+            "description": [
+                "Integrated broker APIs for real‑time and historical market data; designed scalable ingestion pipelines.",
+                "Collaborated on React data‑driven UI components; connected frontend to backend services.",
+                "Contributed across Python, Java, and JavaScript codebases."
+            ]
+        },
+        {
+            "company": "VECTOR Marketing",
+            "role": "Trainee",
+            "period": "Feb 2023",
+            "description": [
+                "Trained in market research, branding, and customer engagement; applied concepts to campaigns.",
+                "Analyzed campaigns and optimized content for outreach and retention.",
+                "Hands‑on product promotion and direct sales; delivered persuasive presentations."
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "title": "MNIST Digit Classifier",
+            "stack": [
+                "Python",
+                "NumPy",
+                "Pandas"
+            ],
+            "short_desc": "3‑layer fully‑connected neural network from scratch with GUI for live digit prediction.",
+            "bullets": [
+                "Trained on MNIST; persisted weights for reuse.",
+                "Evaluation scripts for accuracy, confusion matrix, and classification report.",
+                "Interactive draw‑and‑predict interface."
+            ],
+            "tags": [
+                "Python",
+                "NumPy",
+                "Pandas",
+                "Machine Learning",
+                "Neural Network"
+            ],
+            "links": [
+                {
+                    "text": "View Code",
+                    "url": "",
+                    "icon": "fab fa-github"
+                },
+                {
+                    "text": "Live Demo",
+                    "url": "",
+                    "icon": "fas fa-external-link-alt"
+                }
+            ]
+        },
+        {
+            "title": "Restaurant POS",
+            "stack": [
+                "HTML",
+                "CSS",
+                "Node.js"
+            ],
+            "short_desc": "Web app for efficient order placement and management with real‑time updates.",
+            "bullets": [
+                "Intuitive ordering interfaces.",
+                "Notifications between ordering and receiving systems.",
+                "JSON‑based storage and retrieval."
+            ],
+            "tags": [
+                "HTML",
+                "CSS",
+                "Node.js",
+                "Web Development",
+                "Real-time"
+            ],
+            "links": [
+                {
+                    "text": "View Code",
+                    "url": "",
+                    "icon": "fab fa-github"
+                },
+                {
+                    "text": "Live Demo",
+                    "url": "",
+                    "icon": "fas fa-external-link-alt"
+                }
+            ]
+        },
+        {
+            "title": "Blackjack Game",
+            "stack": [
+                "C++"
+            ],
+            "short_desc": "CLI Blackjack with AI and multiplayer modes.",
+            "bullets": [
+                "Three AI difficulty levels; highest plays optimally."
+            ],
+            "tags": [
+                "C++",
+                "Game Development",
+                "CLI",
+                "AI"
+            ],
+            "links": [
+                {
+                    "text": "View Code",
+                    "url": "",
+                    "icon": "fab fa-github"
+                },
+                {
+                    "text": "Live Demo",
+                    "url": "",
+                    "icon": "fas fa-external-link-alt"
+                }
+            ]
+        },
+        {
+            "title": "Network Data Capture System",
+            "stack": [
+                "Python",
+                "JSON"
+            ],
+            "short_desc": "Monitors network activity, logs devices, performs reverse DNS and port scans.",
+            "bullets": [
+                "Captured IPs of connected devices.",
+                "Reverse DNS for identification.",
+                "Open port scanning for security insights."
+            ],
+            "tags": [
+                "Python",
+                "JSON",
+                "Networking",
+                "Security"
+            ],
+            "links": [
+                {
+                    "text": "View Code",
+                    "url": "",
+                    "icon": "fab fa-github"
+                },
+                {
+                    "text": "Live Demo",
+                    "url": "",
+                    "icon": "fas fa-external-link-alt"
+                }
+            ]
+        },
+        {
+            "title": "Website for Non‑Profit",
+            "stack": [
+                "HTML",
+                "CSS",
+                "JavaScript"
+            ],
+            "short_desc": "Responsive site with photo management, social embeds, live video, and validation.",
+            "bullets": [],
+            "tags": [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "Web Development",
+                "Responsive Design"
+            ],
+            "links": [
+                {
+                    "text": "View Code",
+                    "url": "",
+                    "icon": "fab fa-github"
+                },
+                {
+                    "text": "Live Demo",
+                    "url": "",
+                    "icon": "fas fa-external-link-alt"
+                }
+            ]
+        },
+        {
+            "title": "Recipe Generator AI",
+            "stack": [
+                "Electron",
+                "Node.js",
+                "Python"
+            ],
+            "short_desc": "Desktop app generating customized recipes via Google Gemini API with secure IPC.",
+            "bullets": [
+                "Modular architecture (main, renderer, preload).",
+                "Ingredient and preference inputs with guided UX."
+            ],
+            "tags": [
+                "Electron",
+                "Node.js",
+                "Python",
+                "AI",
+                "Google Gemini API",
+                "Desktop App"
+            ],
+            "links": [
+                {
+                    "text": "View Code",
+                    "url": "",
+                    "icon": "fab fa-github"
+                },
+                {
+                    "text": "Live Demo",
+                    "url": "",
+                    "icon": "fas fa-external-link-alt"
+                }
+            ]
+        }
+    ],
+    "skills": [
+        {
+            "name": "Java",
+            "level": "Advanced"
+        },
+        {
+            "name": "C++",
+            "level": "Intermediate"
+        },
+        {
+            "name": "JavaScript",
+            "level": "Advanced"
+        },
+        {
+            "name": "Python",
+            "level": "Advanced"
+        },
+        {
+            "name": "HTML",
+            "level": "Advanced"
+        },
+        {
+            "name": "CSS",
+            "level": "Advanced"
+        },
+        {
+            "name": "SolidWorks",
+            "level": "Intermediate"
+        },
+        {
+            "name": "Fusion 360",
+            "level": "Intermediate"
+        },
+        {
+            "name": "Electronics",
+            "level": "Intermediate"
+        },
+        {
+            "name": "Marketing Strategy",
+            "level": "Advanced"
+        },
+        {
+            "name": "Azure",
+            "level": "In Progress"
+        }
+    ],
+    "certifications": [
+        {
+            "name": "Google Cybersecurity Certification",
+            "issuer": "Google"
+        },
+        {
+            "name": "Microsoft Azure Certification",
+            "issuer": "Ongoing"
+        }
+    ],
+    "education": [
+        {
+            "institution": "Georgia State University",
+            "degree": "Computer Science",
+            "class": "Class of 2027",
+            "location": "Atlanta, GA"
+        }
+    ]
+}
