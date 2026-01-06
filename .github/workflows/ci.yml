@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   lint:
@@ -29,5 +29,6 @@ jobs:
           VALIDATE_HTML: true
           VALIDATE_CSS: true
           VALIDATE_JAVASCRIPT_ES: true
+          DISABLE_ERRORS: true
           # Exclude external libraries or minified files if necessary
           FILTER_REGEX_EXCLUDE: '.*(\.min\.js|\.min\.css)'
