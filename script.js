@@ -20,9 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
 /**
  * Constellation / Particle Background
  */
-/**
- * Constellation / Particle Background
- */
 function initCanvas(config) {
   const canvas = document.getElementById('canvas-bg');
   if (!canvas) return;
@@ -229,10 +226,6 @@ async function fetchData() {
     // If initCanvas is initGeometricFlux, it doesn't currently accept a config.
     // For now, we'll pass the config as per instruction, assuming initCanvas will be updated.
     initCanvas(data.config ? data.config.particles : null);
-
-    // setupScrollProgress();
-    // setupCustomCursor();
-    // setupActiveNav();
 
     // Re-trigger intersections and setup button effects
     setupScrollObserver();
@@ -628,6 +621,15 @@ function updateCopyright() {
  * Hacker Scramble Effect 
  */
 function scrambleText(element, finalString) {
+  // Prevent re-trigger if already scrambling or within cooldown
+  const now = Date.now();
+  const lastScramble = parseInt(element.getAttribute('data-last-scramble') || '0');
+
+  if (element.getAttribute('data-scrambling') === 'true' || (now - lastScramble < 2000)) return;
+
+  element.setAttribute('data-scrambling', 'true');
+  element.setAttribute('data-last-scramble', now.toString());
+
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
   let iterations = 0;
 
@@ -647,8 +649,9 @@ function scrambleText(element, finalString) {
 
     if (iterations >= finalString.length) {
       clearInterval(interval);
-      // Remove hacker styling for readability
+      // Remove hacker styling and lock
       element.classList.remove('hacker-text');
+      element.setAttribute('data-scrambling', 'false');
     }
 
     iterations += 1 / 2; // Speed control
@@ -680,9 +683,6 @@ function setupMagneticButtons() {
 /**
  * Constellation / Particle Background
  */
-// Old 2D Particle System Removed
-// See initGeometricFlux for 3D Engine
-
 /**
  * Helper Functions
  */
@@ -731,9 +731,9 @@ function playClickSound() {
   // For real sound, user would need a .wav file. 
   // Since I can't generate a full wav, I'll log to console for now or use a very short beep if possible.
   // Actually, let's skip the actual audio play to avoid 'user interaction' blocks or annoying beeps.
-  // console.log("Click sound"); 
+
 }
 
 function playHoverSound() {
-  // console.log("Hover sound");
+
 }

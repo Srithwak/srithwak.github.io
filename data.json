@@ -25,276 +25,189 @@
             "linkedin": "https://www.linkedin.com/in/rithwak-somepalli-8987b6321/"
         },
         "hero_summary": {
-            "current": "Twin Brain Intern",
-            "focus": "AI • Data Pipelines • React"
+            "current": "Student",
+            "focus": "Cloud/AI Infra • Distributed Systems • MLOps"
         },
-        "resume_file": "One_Pager.docx"
+        "resume_file": "RS_resume.pdf"
     },
     "experience": [
         {
             "company": "Twin Brain",
             "role": "Internship",
-            "period": "June 2025 – Present",
+            "period": "June 2025 – August 2025",
             "description": [
-                "Integrated broker APIs for real‑time and historical market data; designed scalable ingestion pipelines.",
-                "Collaborated on React data‑driven UI components; connected frontend to backend services.",
-                "Contributed across Python, Java, and JavaScript codebases."
-            ]
-        },
-        {
-            "company": "VECTOR Marketing",
-            "role": "Trainee",
-            "period": "Feb 2023",
-            "description": [
-                "Trained in market research, branding, and customer engagement; applied concepts to campaigns.",
-                "Analyzed campaigns and optimized content for outreach and retention.",
-                "Hands‑on product promotion and direct sales; delivered persuasive presentations."
+                "Engineered high-throughput data pipelines using Python and Java to consume, normalize, and aggregate real-time market data from 3+ diverse brokerage APIs, processing over 5GB of daily data with 99.9% accuracy.",
+                "Collaborated with frontend teams to architect low-latency WebSocket streams, reducing dashboard data lag by 40% (from 500ms to <300ms) and enabling instant price updates.",
+                "Implemented robust error handling and rate-limiting strategies, ensuring 99.99% system availability during effective usage spikes of 10k+ requests/minute."
             ]
         }
     ],
     "projects": [
         {
-            "title": "MNIST Digit Classifier",
+            "title": "Heart Anomaly Detection",
             "stack": [
-                "Python",
-                "NumPy",
-                "Pandas"
+                "PyTorch",
+                "Kubernetes",
+                "FastAPI"
             ],
-            "short_desc": "3‑layer fully‑connected neural network from scratch with GUI for live digit prediction.",
+            "short_desc": "Resilient microservices deployment with early-exit neural networks for anomaly detection.",
             "bullets": [
-                "Trained on MNIST; persisted weights for reuse.",
-                "Evaluation scripts for accuracy, confusion matrix, and classification report.",
-                "Interactive draw‑and‑predict interface."
+                "Architected a resilient microservices deployment on Kubernetes, leveraging Horizontal Pod Autoscaling (HPA) to scale from 1 to 10 replicas in under 30 seconds to handle burst loads.",
+                "Engineered an 'Early Exit' Progressive Neural Network in PyTorch, utilizing entropy-based thresholds to reduce average inference latency by 35% while maintaining 95%+ accuracy.",
+                "Developed a real-time, event-driven dashboard using FastAPI and WebSockets to stream simulated IoT sensor data with <15ms end-to-end latency."
             ],
             "tags": [
-                "Python",
-                "NumPy",
-                "Pandas",
-                "Machine Learning",
-                "Neural Network"
+                "AI",
+                "Kubernetes",
+                "PyTorch",
+                "Microservices",
+                "FastAPI"
             ],
             "links": [
                 {
                     "text": "View Code",
-                    "url": "",
+                    "url": "https://github.com/Srithwak",
                     "icon": "fab fa-github"
-                },
-                {
-                    "text": "Live Demo",
-                    "url": "",
-                    "icon": "fas fa-external-link-alt"
                 }
             ]
         },
         {
-            "title": "Restaurant POS",
+            "title": "Cloud-Native Infrastructure Code",
             "stack": [
-                "HTML",
-                "CSS",
-                "Node.js"
-            ],
-            "short_desc": "Web app for efficient order placement and management with real‑time updates.",
-            "bullets": [
-                "Intuitive ordering interfaces.",
-                "Notifications between ordering and receiving systems.",
-                "JSON‑based storage and retrieval."
-            ],
-            "tags": [
-                "HTML",
-                "CSS",
-                "Node.js",
-                "Web Development",
-                "Real-time"
-            ],
-            "links": [
-                {
-                    "text": "View Code",
-                    "url": "",
-                    "icon": "fab fa-github"
-                },
-                {
-                    "text": "Live Demo",
-                    "url": "",
-                    "icon": "fas fa-external-link-alt"
-                }
-            ]
-        },
-        {
-            "title": "Blackjack Game",
-            "stack": [
-                "C++"
-            ],
-            "short_desc": "CLI Blackjack with AI and multiplayer modes.",
-            "bullets": [
-                "Three AI difficulty levels; highest plays optimally."
-            ],
-            "tags": [
-                "C++",
-                "Game Development",
-                "CLI",
-                "AI"
-            ],
-            "links": [
-                {
-                    "text": "View Code",
-                    "url": "",
-                    "icon": "fab fa-github"
-                },
-                {
-                    "text": "Live Demo",
-                    "url": "",
-                    "icon": "fas fa-external-link-alt"
-                }
-            ]
-        },
-        {
-            "title": "Network Data Capture System",
-            "stack": [
-                "Python",
-                "JSON"
-            ],
-            "short_desc": "Monitors network activity, logs devices, performs reverse DNS and port scans.",
-            "bullets": [
-                "Captured IPs of connected devices.",
-                "Reverse DNS for identification.",
-                "Open port scanning for security insights."
-            ],
-            "tags": [
-                "Python",
-                "JSON",
-                "Networking",
-                "Security"
-            ],
-            "links": [
-                {
-                    "text": "View Code",
-                    "url": "",
-                    "icon": "fab fa-github"
-                },
-                {
-                    "text": "Live Demo",
-                    "url": "",
-                    "icon": "fas fa-external-link-alt"
-                }
-            ]
-        },
-        {
-            "title": "Website for Non‑Profit",
-            "stack": [
-                "HTML",
-                "CSS",
-                "JavaScript"
-            ],
-            "short_desc": "Responsive site with photo management, social embeds, live video, and validation.",
-            "bullets": [],
-            "tags": [
-                "HTML",
-                "CSS",
-                "JavaScript",
-                "Web Development",
-                "Responsive Design"
-            ],
-            "links": [
-                {
-                    "text": "View Code",
-                    "url": "",
-                    "icon": "fab fa-github"
-                },
-                {
-                    "text": "Live Demo",
-                    "url": "",
-                    "icon": "fas fa-external-link-alt"
-                }
-            ]
-        },
-        {
-            "title": "Recipe Generator AI",
-            "stack": [
-                "Electron",
-                "Node.js",
+                "Terraform",
+                "OCI",
                 "Python"
             ],
-            "short_desc": "Desktop app generating customized recipes via Google Gemini API with secure IPC.",
+            "short_desc": "Production-grade IaC deployment with Zero-Trust security and automated disaster recovery.",
             "bullets": [
-                "Modular architecture (main, renderer, preload).",
-                "Ingredient and preference inputs with guided UX."
+                "Architected a production-grade Infrastructure as Code (IaC) deployment on Oracle Cloud using Terraform to automate network and compute provisioning, slashing manual setup time from 1 hour to <5 minutes (90%+ reduction).",
+                "Engineered a Zero-Trust security model utilizing IAM Instance Principals for keyless access, protected by a custom Python/Flask API with Bearer Token Authentication.",
+                "Developed a self-healing disaster recovery pipeline using OCI Object Storage and Bash/Cron, ensuring 99.9% service availability through automated backups."
             ],
             "tags": [
-                "Electron",
-                "Node.js",
-                "Python",
-                "AI",
-                "Google Gemini API",
-                "Desktop App"
+                "DevOps",
+                "Terraform",
+                "Cloud",
+                "Security",
+                "OCI"
             ],
             "links": [
                 {
                     "text": "View Code",
-                    "url": "",
+                    "url": "https://github.com/Srithwak",
                     "icon": "fab fa-github"
-                },
+                }
+            ]
+        },
+        {
+            "title": "Co-Evolutionary Market Simulator",
+            "stack": [
+                "Python",
+                "TensorFlow",
+                "RL"
+            ],
+            "short_desc": "Market simulation where DDQN Market Maker agents trade against evolutionary populations.",
+            "bullets": [
+                "Built a complex co-evolutionary market simulation where a DDQN Market Maker trades against a population of 50+ EGT agents over 100,000+ training episodes.",
+                "Designed a 'Shape-Shifting' hybrid reward function to train the ARL agent on 5 years of real OHLCV data, achieving a 15% higher Sharpe Ratio than the baseline strategy.",
+                "Implemented Replicator Dynamics to model the evolution of EGT strategies, creating a non-stationary environment that forces the DRL agent to continuously adapt."
+            ],
+            "tags": [
+                "AI",
+                "Reinforcement Learning",
+                "Finance",
+                "Simulation",
+                "Python"
+            ],
+            "links": [
                 {
-                    "text": "Live Demo",
-                    "url": "",
-                    "icon": "fas fa-external-link-alt"
+                    "text": "View Code",
+                    "url": "https://github.com/Srithwak",
+                    "icon": "fab fa-github"
+                }
+            ]
+        },
+        {
+            "title": "Network Intrusion Detection System",
+            "stack": [
+                "Node.js",
+                "Linux",
+                "OCI"
+            ],
+            "short_desc": "Distributed cloud-native NIDS using a split-architecture with honeypots.",
+            "bullets": [
+                "Built a distributed, cloud-native NIDS capable of inspecting 1,000+ packets/second across a distributed network of local honeypots.",
+                "Implemented custom TCP/UDP packet handling in Node.js to detect 5+ distinct attack types (SQLi, XSS, etc.) with a false positive rate under 2%.",
+                "Hardened the deployment using Linux `iptables` for strict firewall rules and configured system-level persistence to ensure continuous 24/7 network monitoring."
+            ],
+            "tags": [
+                "Security",
+                "Node.js",
+                "Networking",
+                "Cloud",
+                "Distributed Systems"
+            ],
+            "links": [
+                {
+                    "text": "View Code",
+                    "url": "https://github.com/Srithwak",
+                    "icon": "fab fa-github"
+                }
+            ]
+        },
+        {
+            "title": "Personal Website",
+            "stack": [
+                "JavaScript",
+                "HTML5",
+                "GitHub Actions"
+            ],
+            "short_desc": "High-performance portfolio with dynamic rendering and CI/CD pipelines.",
+            "bullets": [
+                "Engineered a high-performance, interactive portfolio using vanilla JavaScript and HTML5 Canvas, achieving a perfect 100/100 Lighthouse Performance score.",
+                "Decoupled content from presentation by implementing a dynamic rendering engine that fetches project data from an external JSON configuration, enabling instant updates without code changes.",
+                "Built a robust CI/CD pipeline using GitHub Actions to automate code linting, formatting, and deployment to GitHub Pages, ensuring high code quality and rapid delivery."
+            ],
+            "tags": [
+                "Web Dev",
+                "CI/CD",
+                "Frontend",
+                "Automation",
+                "JavaScript"
+            ],
+            "links": [
+                {
+                    "text": "View Code",
+                    "url": "https://github.com/Srithwak",
+                    "icon": "fab fa-github"
                 }
             ]
         }
     ],
     "skills": [
-        {
-            "name": "Java",
-            "level": "Advanced"
-        },
-        {
-            "name": "C++",
-            "level": "Intermediate"
-        },
-        {
-            "name": "JavaScript",
-            "level": "Advanced"
-        },
-        {
-            "name": "Python",
-            "level": "Advanced"
-        },
-        {
-            "name": "HTML",
-            "level": "Advanced"
-        },
-        {
-            "name": "CSS",
-            "level": "Advanced"
-        },
-        {
-            "name": "SolidWorks",
-            "level": "Intermediate"
-        },
-        {
-            "name": "Fusion 360",
-            "level": "Intermediate"
-        },
-        {
-            "name": "Electronics",
-            "level": "Intermediate"
-        },
-        {
-            "name": "Marketing Strategy",
-            "level": "Advanced"
-        },
-        {
-            "name": "Azure",
-            "level": "In Progress"
-        }
+        { "name": "Python", "level": "Advanced" },
+        { "name": "JavaScript", "level": "Advanced" },
+        { "name": "Java", "level": "Advanced" },
+        { "name": "C++", "level": "Advanced" },
+        { "name": "Bash/Shell", "level": "Intermediate" },
+        { "name": "SQL", "level": "Intermediate" },
+        { "name": "HTML/CSS", "level": "Advanced" },
+        { "name": "Terraform (HCL)", "level": "Advanced" },
+        { "name": "PyTorch", "level": "Advanced" },
+        { "name": "TensorFlow", "level": "Advanced" },
+        { "name": "FastAPI", "level": "Advanced" },
+        { "name": "ReactJS", "level": "Advanced" },
+        { "name": "Node.js", "level": "Advanced" },
+        { "name": "Kubernetes", "level": "Advanced" },
+        { "name": "Docker", "level": "Advanced" },
+        { "name": "Oracle Cloud (OCI)", "level": "Advanced" },
+        { "name": "CI/CD", "level": "Advanced" },
+        { "name": "Reinforcement Learning", "level": "Advanced" }
     ],
     "certifications": [
         {
             "name": "Google Cybersecurity Certification",
             "issuer": "Google"
-        },
-        {
-            "name": "Microsoft Azure Certification",
-            "issuer": "Ongoing"
         }
     ],
     "education": [

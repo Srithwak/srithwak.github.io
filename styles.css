@@ -124,6 +124,7 @@ h1 {
   line-height: 1.2;
   margin-bottom: 1rem;
   background: linear-gradient(to right, var(--text-main), var(--text-muted));
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -876,9 +877,12 @@ body.hovering #cursor {
     top: 100%;
     left: 0;
     width: 100%;
-    background: var(--card-bg);
+    background: var(--nav-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     flex-direction: column;
     padding: 2rem;
+    gap: 1.5rem;
     border-bottom: 1px solid var(--border-color);
   }
 
@@ -891,10 +895,43 @@ body.hovering #cursor {
   }
 
   h1 {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
   }
 
   .hero-card {
     display: none;
+  }
+
+  .container {
+    padding: 0 1rem;
+    /* Reduced from 1.5 */
+  }
+
+  .card-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .card {
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 380px;
+    /* Slightly tighter max-width */
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    /* Reduced from 1.4rem */
   }
 }
