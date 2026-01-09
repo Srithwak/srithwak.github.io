@@ -22,7 +22,7 @@
     "email": "srithwak@gmail.com",
     "social": {
       "github": "https://github.com/Srithwak",
-      "linkedin": "https://www.linkedin.com/in/rithwak-somepalli-8987b6321/"
+      "linkedin": "https://linkedin.com/in/rithwak-s"
     },
     "hero_summary": {
       "current": "Student",
@@ -32,68 +32,92 @@
   },
   "experience": [
     {
-      "company": "Twin Brain",
-      "role": "Internship",
-      "period": "June 2025 – August 2025",
+      "company": "Twin Brain, Evu",
+      "role": "Software Development Engineering Intern",
+      "period": "Jun 2025 – Aug 2025",
       "description": [
-        "Engineered high-throughput data pipelines using Python and Java to consume, normalize, and aggregate real-time market data from 3+ diverse brokerage APIs, processing over 5GB of daily data with 99.9% accuracy.",
-        "Collaborated with frontend teams to architect low-latency WebSocket streams, reducing dashboard data lag by 40% (from 500ms to <300ms) and enabling instant price updates.",
-        "Implemented robust error handling and rate-limiting strategies, ensuring 99.99% system availability during effective usage spikes of 10k+ requests/minute."
+        "Integrated AI trading models with broker APIs (Alpaca, Interactive Brokers) to run large-scale simulations, handling 50,000+ requests/day during peak market-open traffic with zero downtime.",
+        "Reduced incident response time by 60% through real-time health telemetry dashboards and automated alerts for abnormal trade patterns and model prediction drift.",
+        "Partnered with other teams to get outputs of 99.9% data accuracy in a simulated environment."
       ]
     }
   ],
   "projects": [
     {
       "title": "Heart Anomaly Detection",
-      "stack": ["PyTorch", "Kubernetes", "FastAPI"],
-      "short_desc": "Resilient microservices deployment with early-exit neural networks for anomaly detection.",
-      "bullets": [
-        "Architected a resilient microservices deployment on Kubernetes, leveraging Horizontal Pod Autoscaling (HPA) to scale from 1 to 10 replicas in under 30 seconds to handle burst loads.",
-        "Engineered an 'Early Exit' Progressive Neural Network in PyTorch, utilizing entropy-based thresholds to reduce average inference latency by 35% while maintaining 95%+ accuracy.",
-        "Developed a real-time, event-driven dashboard using FastAPI and WebSockets to stream simulated IoT sensor data with <15ms end-to-end latency."
+      "stack": [
+        "PyTorch",
+        "Kubernetes",
+        "OCI",
+        "FastAPI"
       ],
-      "tags": ["AI", "Kubernetes", "PyTorch", "Microservices", "FastAPI"],
-      "links": [
-        {
-          "text": "View Code",
-          "url": "https://github.com/Srithwak",
-          "icon": "fab fa-github"
-        }
-      ]
-    },
-    {
-      "title": "Cloud-Native Infrastructure Code",
-      "stack": ["Terraform", "OCI", "Python"],
-      "short_desc": "Production-grade IaC deployment with Zero-Trust security and automated disaster recovery.",
+      "short_desc": "Decreasing-width early-exit architecture for anomaly detection.",
       "bullets": [
-        "Architected a production-grade Infrastructure as Code (IaC) deployment on Oracle Cloud using Terraform to automate network and compute provisioning, slashing manual setup time from 1 hour to <5 minutes (90%+ reduction).",
-        "Engineered a Zero-Trust security model utilizing IAM Instance Principals for keyless access, protected by a custom Python/Flask API with Bearer Token Authentication.",
-        "Developed a self-healing disaster recovery pipeline using OCI Object Storage and Bash/Cron, ensuring 99.9% service availability through automated backups."
-      ],
-      "tags": ["DevOps", "Terraform", "Cloud", "Security", "OCI"],
-      "links": [
-        {
-          "text": "View Code",
-          "url": "https://github.com/Srithwak",
-          "icon": "fab fa-github"
-        }
-      ]
-    },
-    {
-      "title": "Co-Evolutionary Market Simulator",
-      "stack": ["Python", "TensorFlow", "RL"],
-      "short_desc": "Market simulation where DDQN Market Maker agents trade against evolutionary populations.",
-      "bullets": [
-        "Built a complex co-evolutionary market simulation where a DDQN Market Maker trades against a population of 50+ EGT agents over 100,000+ training episodes.",
-        "Designed a 'Shape-Shifting' hybrid reward function to train the ARL agent on 5 years of real OHLCV data, achieving a 15% higher Sharpe Ratio than the baseline strategy.",
-        "Implemented Replicator Dynamics to model the evolution of EGT strategies, creating a non-stationary environment that forces the DRL agent to continuously adapt."
+        "Designed a novel decreasing-width early-exit architecture in PyTorch, reducing energy usage by 35% while maintaining 95%+ accuracy by prioritizing logical reasoning over feature enumeration.",
+        "Orchestrated a Kubernetes and Docker-based deployment on OCI, utilizing FastAPI and WebSockets to stream live EKG graphs with sub-200ms end-to-end latency via a CI/CD pipeline."
       ],
       "tags": [
         "AI",
-        "Reinforcement Learning",
+        "Kubernetes",
+        "PyTorch",
+        "OCI",
+        "FastAPI"
+      ],
+      "links": [
+        {
+          "text": "View Code",
+          "url": "https://github.com/Srithwak",
+          "icon": "fab fa-github"
+        }
+      ]
+    },
+    {
+      "title": "Cloud-Native Infrastructure & DevOps Pipeline",
+      "stack": [
+        "Terraform",
+        "OCI",
+        "Python",
+        "Bash"
+      ],
+      "short_desc": "Automated full OCI cloud provisioning and restoration.",
+      "bullets": [
+        "Automated full OCI cloud provisioning of 15+ resources with Terraform, implementing Python and Bash scripts to expose REST endpoints for health monitoring and status updates.",
+        "Strengthened cloud security by implementing keyless authentication using OCI Instance Principals and Dynamic Groups, eliminating 100% of static credentials and passing a simulated security audit."
+      ],
+      "tags": [
+        "DevOps",
+        "Terraform",
+        "Cloud",
+        "Security",
+        "OCI"
+      ],
+      "links": [
+        {
+          "text": "View Code",
+          "url": "https://github.com/Srithwak",
+          "icon": "fab fa-github"
+        }
+      ]
+    },
+    {
+      "title": "Co-Evolutionary Market Research (DRL vs EGT)",
+      "stack": [
+        "Python",
+        "TensorFlow",
+        "Keras",
+        "NumPy"
+      ],
+      "short_desc": "Bid–ask market simulation with DRL agents vs EGT populations.",
+      "bullets": [
+        "Architected a bid–ask market in Python using TensorFlow and Keras where a DRL agent and EGT populations competed over 100,000 episodes, with a 15% higher Sharpe ratio for DRL strategies.",
+        "Utilized NumPy to validate results against 5 years of real market data, proving DRL systematically exploited evolutionary population stability thresholds."
+      ],
+      "tags": [
+        "AI",
+        "RL",
         "Finance",
-        "Simulation",
-        "Python"
+        "Python",
+        "TensorFlow"
       ],
       "links": [
         {
@@ -105,19 +129,23 @@
     },
     {
       "title": "Network Intrusion Detection System",
-      "stack": ["Node.js", "Linux", "OCI"],
-      "short_desc": "Distributed cloud-native NIDS using a split-architecture with honeypots.",
+      "stack": [
+        "Node.js",
+        "Linux",
+        "OCI",
+        "Iptables"
+      ],
+      "short_desc": "OCI-hosted NIDS using Node.js and Linux netfilter.",
       "bullets": [
-        "Built a distributed, cloud-native NIDS capable of inspecting 1,000+ packets/second across a distributed network of local honeypots.",
-        "Implemented custom TCP/UDP packet handling in Node.js to detect 5+ distinct attack types (SQLi, XSS, etc.) with a false positive rate under 2%.",
-        "Hardened the deployment using Linux `iptables` for strict firewall rules and configured system-level persistence to ensure continuous 24/7 network monitoring."
+        "Engineered an OCI-hosted NIDS using Node.js and Linux netfilter/iptables to perform Deep Packet Inspection on 10,000+ packets/minute, identifying DDoS, SQL injection, and port scanning with a <2% false positive rate.",
+        "Mechanized real-time threat detection and analysis by streaming telemetry to a cloud-hosted REST endpoint, reducing the threat mitigation window to sub-second intervals."
       ],
       "tags": [
         "Security",
         "Node.js",
-        "Networking",
-        "Cloud",
-        "Distributed Systems"
+        "Linux",
+        "OCI",
+        "Networking"
       ],
       "links": [
         {
@@ -129,14 +157,24 @@
     },
     {
       "title": "Personal Website",
-      "stack": ["JavaScript", "HTML5", "GitHub Actions"],
+      "stack": [
+        "JavaScript",
+        "HTML5",
+        "GitHub Actions"
+      ],
       "short_desc": "High-performance portfolio with dynamic rendering and CI/CD pipelines.",
       "bullets": [
         "Engineered a high-performance, interactive portfolio using vanilla JavaScript and HTML5 Canvas, achieving a perfect 100/100 Lighthouse Performance score.",
         "Decoupled content from presentation by implementing a dynamic rendering engine that fetches project data from an external JSON configuration, enabling instant updates without code changes.",
         "Built a robust CI/CD pipeline using GitHub Actions to automate code linting, formatting, and deployment to GitHub Pages, ensuring high code quality and rapid delivery."
       ],
-      "tags": ["Web Dev", "CI/CD", "Frontend", "Automation", "JavaScript"],
+      "tags": [
+        "Web Dev",
+        "CI/CD",
+        "Frontend",
+        "Automation",
+        "JavaScript"
+      ],
       "links": [
         {
           "text": "View Code",
@@ -147,37 +185,92 @@
     }
   ],
   "skills": [
-    { "name": "Python", "level": "Advanced" },
-    { "name": "JavaScript", "level": "Advanced" },
-    { "name": "Java", "level": "Advanced" },
-    { "name": "C++", "level": "Advanced" },
-    { "name": "Bash/Shell", "level": "Intermediate" },
-    { "name": "SQL", "level": "Intermediate" },
-    { "name": "HTML/CSS", "level": "Advanced" },
-    { "name": "Terraform (HCL)", "level": "Advanced" },
-    { "name": "PyTorch", "level": "Advanced" },
-    { "name": "TensorFlow", "level": "Advanced" },
-    { "name": "FastAPI", "level": "Advanced" },
-    { "name": "ReactJS", "level": "Advanced" },
-    { "name": "Node.js", "level": "Advanced" },
-    { "name": "Kubernetes", "level": "Advanced" },
-    { "name": "Docker", "level": "Advanced" },
-    { "name": "Oracle Cloud (OCI)", "level": "Advanced" },
-    { "name": "CI/CD", "level": "Advanced" },
-    { "name": "Reinforcement Learning", "level": "Advanced" }
+    {
+      "name": "Python",
+      "level": "Advanced"
+    },
+    {
+      "name": "JavaScript",
+      "level": "Advanced"
+    },
+    {
+      "name": "Java",
+      "level": "Advanced"
+    },
+    {
+      "name": "C++",
+      "level": "Advanced"
+    },
+    {
+      "name": "Bash",
+      "level": "Intermediate"
+    },
+    {
+      "name": "MySQL",
+      "level": "Intermediate"
+    },
+    {
+      "name": "PyTorch",
+      "level": "Advanced"
+    },
+    {
+      "name": "TensorFlow",
+      "level": "Advanced"
+    },
+    {
+      "name": "Keras",
+      "level": "Advanced"
+    },
+    {
+      "name": "Node.js",
+      "level": "Advanced"
+    },
+    {
+      "name": "Flask",
+      "level": "Advanced"
+    },
+    {
+      "name": "Scikit-learn",
+      "level": "Advanced"
+    },
+    {
+      "name": "Kubernetes",
+      "level": "Advanced"
+    },
+    {
+      "name": "Docker",
+      "level": "Advanced"
+    },
+    {
+      "name": "Terraform",
+      "level": "Advanced"
+    },
+    {
+      "name": "Oracle Cloud",
+      "level": "Advanced"
+    },
+    {
+      "name": "GitHub Actions",
+      "level": "Advanced"
+    },
+    {
+      "name": "Linux",
+      "level": "Advanced"
+    }
   ],
   "certifications": [
     {
-      "name": "Google Cybersecurity Certification",
+      "name": "Cybersecurity Certification",
       "issuer": "Google"
     }
   ],
   "education": [
     {
       "institution": "Georgia State University",
-      "degree": "Computer Science",
-      "class": "Class of 2027",
-      "location": "Atlanta, GA"
+      "degree": "B.S. in Computer Science",
+      "class": "Expected Graduation, May 2027",
+      "location": "Atlanta, Georgia",
+      "gpa": "3.59"
     }
   ]
 }
