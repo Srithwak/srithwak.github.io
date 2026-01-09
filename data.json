@@ -45,24 +45,13 @@
   "projects": [
     {
       "title": "Heart Anomaly Detection",
-      "stack": [
-        "PyTorch",
-        "Kubernetes",
-        "OCI",
-        "FastAPI"
-      ],
+      "stack": ["PyTorch", "Kubernetes", "OCI", "FastAPI"],
       "short_desc": "Decreasing-width early-exit architecture for anomaly detection.",
       "bullets": [
         "Designed a novel decreasing-width early-exit architecture in PyTorch, reducing energy usage by 35% while maintaining 95%+ accuracy by prioritizing logical reasoning over feature enumeration.",
         "Orchestrated a Kubernetes and Docker-based deployment on OCI, utilizing FastAPI and WebSockets to stream live EKG graphs with sub-200ms end-to-end latency via a CI/CD pipeline."
       ],
-      "tags": [
-        "AI",
-        "Kubernetes",
-        "PyTorch",
-        "OCI",
-        "FastAPI"
-      ],
+      "tags": ["AI", "Kubernetes", "PyTorch", "OCI", "FastAPI"],
       "links": [
         {
           "text": "View Code",
@@ -73,24 +62,13 @@
     },
     {
       "title": "Cloud-Native Infrastructure & DevOps Pipeline",
-      "stack": [
-        "Terraform",
-        "OCI",
-        "Python",
-        "Bash"
-      ],
+      "stack": ["Terraform", "OCI", "Python", "Bash"],
       "short_desc": "Automated full OCI cloud provisioning and restoration.",
       "bullets": [
         "Automated full OCI cloud provisioning of 15+ resources with Terraform, implementing Python and Bash scripts to expose REST endpoints for health monitoring and status updates.",
         "Strengthened cloud security by implementing keyless authentication using OCI Instance Principals and Dynamic Groups, eliminating 100% of static credentials and passing a simulated security audit."
       ],
-      "tags": [
-        "DevOps",
-        "Terraform",
-        "Cloud",
-        "Security",
-        "OCI"
-      ],
+      "tags": ["DevOps", "Terraform", "Cloud", "Security", "OCI"],
       "links": [
         {
           "text": "View Code",
@@ -101,24 +79,13 @@
     },
     {
       "title": "Co-Evolutionary Market Research (DRL vs EGT)",
-      "stack": [
-        "Python",
-        "TensorFlow",
-        "Keras",
-        "NumPy"
-      ],
+      "stack": ["Python", "TensorFlow", "Keras", "NumPy"],
       "short_desc": "Bid–ask market simulation with DRL agents vs EGT populations.",
       "bullets": [
         "Architected a bid–ask market in Python using TensorFlow and Keras where a DRL agent and EGT populations competed over 100,000 episodes, with a 15% higher Sharpe ratio for DRL strategies.",
         "Utilized NumPy to validate results against 5 years of real market data, proving DRL systematically exploited evolutionary population stability thresholds."
       ],
-      "tags": [
-        "AI",
-        "RL",
-        "Finance",
-        "Python",
-        "TensorFlow"
-      ],
+      "tags": ["AI", "RL", "Finance", "Python", "TensorFlow"],
       "links": [
         {
           "text": "View Code",
@@ -129,24 +96,13 @@
     },
     {
       "title": "Network Intrusion Detection System",
-      "stack": [
-        "Node.js",
-        "Linux",
-        "OCI",
-        "Iptables"
-      ],
+      "stack": ["Node.js", "Linux", "OCI", "Iptables"],
       "short_desc": "OCI-hosted NIDS using Node.js and Linux netfilter.",
       "bullets": [
         "Engineered an OCI-hosted NIDS using Node.js and Linux netfilter/iptables to perform Deep Packet Inspection on 10,000+ packets/minute, identifying DDoS, SQL injection, and port scanning with a <2% false positive rate.",
         "Mechanized real-time threat detection and analysis by streaming telemetry to a cloud-hosted REST endpoint, reducing the threat mitigation window to sub-second intervals."
       ],
-      "tags": [
-        "Security",
-        "Node.js",
-        "Linux",
-        "OCI",
-        "Networking"
-      ],
+      "tags": ["Security", "Node.js", "Linux", "OCI", "Networking"],
       "links": [
         {
           "text": "View Code",
@@ -157,24 +113,14 @@
     },
     {
       "title": "Personal Website",
-      "stack": [
-        "JavaScript",
-        "HTML5",
-        "GitHub Actions"
-      ],
+      "stack": ["JavaScript", "HTML5", "GitHub Actions"],
       "short_desc": "High-performance portfolio with dynamic rendering and CI/CD pipelines.",
       "bullets": [
         "Engineered a high-performance, interactive portfolio using vanilla JavaScript and HTML5 Canvas, achieving a perfect 100/100 Lighthouse Performance score.",
         "Decoupled content from presentation by implementing a dynamic rendering engine that fetches project data from an external JSON configuration, enabling instant updates without code changes.",
         "Built a robust CI/CD pipeline using GitHub Actions to automate code linting, formatting, and deployment to GitHub Pages, ensuring high code quality and rapid delivery."
       ],
-      "tags": [
-        "Web Dev",
-        "CI/CD",
-        "Frontend",
-        "Automation",
-        "JavaScript"
-      ],
+      "tags": ["Web Dev", "CI/CD", "Frontend", "Automation", "JavaScript"],
       "links": [
         {
           "text": "View Code",
