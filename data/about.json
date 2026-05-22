@@ -1,0 +1,42 @@
+[
+  {
+    "icon": "⚙️",
+    "title": "Engineering & Systems",
+    "color": "#D91B24",
+    "bullets": [
+      "I build things that actually work under pressure — cloud infra, real-time pipelines, distributed systems.",
+      "If it can be automated, containerized, or orchestrated, I've probably already done it.",
+      "Currently studying Computer Science at Georgia State University (Expected May 2027)."
+    ]
+  },
+  {
+    "icon": "🧠",
+    "title": "AI & Machine Learning",
+    "color": "#C4C4C4",
+    "bullets": [
+      "From neural architectures with learnable exit thresholds to evolutionary game-theoretic market agents.",
+      "I don't just use ML frameworks — I design the reward signals, loss functions, and training strategies from scratch.",
+      "Completed coursework in Artificial Intelligence, Machine Learning, and Data Structures."
+    ]
+  },
+  {
+    "icon": "🛡️",
+    "title": "Security & Defense",
+    "color": "#761F21",
+    "bullets": [
+      "Built honeypot-based intrusion detection systems that catch SQLi, XSS, brute force, and RCE attempts in real-time.",
+      "Google Cybersecurity Certificate holder since May 2023.",
+      "I believe every system should be designed with adversarial thinking in mind."
+    ]
+  },
+  {
+    "icon": "🚀",
+    "title": "Growth & Curiosity",
+    "color": "#D91B24",
+    "bullets": [
+      "I ship projects fast — most of my portfolio was built within weeks, not months.",
+      "I'm always exploring new stacks, from Terraform and Kubernetes to PyTorch and TensorFlow.",
+      "I approach every problem with the mindset: make it work, make it right, make it fast."
+    ]
+  }
+]

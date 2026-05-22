@@ -1,0 +1,48 @@
+{
+  "colors": {
+    "primary": "#D91B24",
+    "primaryDark": "#761F21",
+    "neutral": "#C4C4C4",
+    "surface": "#504141",
+    "background": "#0E0B0B",
+    "backgroundAlt": "#1A1414",
+    "textPrimary": "#F2EDED",
+    "textSecondary": "#A89E9E",
+    "cardBg": "rgba(80, 65, 65, 0.25)",
+    "cardBorder": "rgba(196, 196, 196, 0.12)",
+    "glassBg": "rgba(26, 20, 20, 0.65)",
+    "glassBorder": "rgba(217, 27, 36, 0.15)"
+  },
+  "contact": {
+    "email": "srithwak@gmail.com",
+    "phone": "(943)-238-4705",
+    "github": "https://github.com/Srithwak",
+    "linkedin": "https://linkedin.com/in/rithwak-s",
+    "website": "https://srithwak.github.io"
+  },
+  "meta": {
+    "name": "Rithwak Somepalli",
+    "title": "Rithwak Somepalli — Software Engineer",
+    "description": "Portfolio of Rithwak Somepalli, a Software Engineer specializing in cloud infrastructure, machine learning, and full-stack development.",
+    "copyright": "Rithwak Somepalli"
+  },
+  "education": {
+    "school": "Georgia State University",
+    "location": "Atlanta, GA",
+    "degree": "B.S. in Computer Science",
+    "expected": "Expected May 2027",
+    "coursework": [
+      "Data Structures",
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Software Engineering",
+      "Database Systems"
+    ]
+  },
+  "skills": {
+    "Languages": ["Python", "JavaScript", "Bash", "SQL", "PowerShell", "Java", "C++", "HCL"],
+    "Frameworks": ["PyTorch", "TensorFlow", "Keras", "FastAPI", "Flask", "Node.js", "Express", "NumPy", "Pandas"],
+    "Cloud & Infra": ["Terraform", "Kubernetes", "Docker", "Oracle Cloud (OCI)", "GitHub Actions", "Linux"],
+    "Certifications": ["Google Cybersecurity Certificate — May 2023"]
+  }
+}

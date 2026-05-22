@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Cloud-Native Game Server Orchestrator",
+    "tech": ["Terraform", "PowerShell", "Bash", "Python", "Flask"],
+    "dates": "Oct. — Nov. 2025",
+    "description": "A one-click deployment pipeline automating provisioning of OCI compute, VCN networking, security lists, and firewall rules.",
+    "bullets": [
+      "Built a one-click deployment pipeline using PowerShell and Terraform to automate provisioning of OCI compute, VCN networking, security lists, and firewall rules.",
+      "Wrote a Bash cloud-init template configuring iptables and a systemd-managed Flask REST API for remote start/stop/status management of the game server.",
+      "Automated SSH key generation via Terraform's tls_private_key provider and used file provisioners to upload game modifications to the server at deploy time."
+    ],
+    "link": ""
+  },
+  {
+    "title": "Heart Anomaly Detection System",
+    "tech": ["PyTorch", "FastAPI", "Docker", "Kubernetes"],
+    "dates": "Dec. 2025",
+    "description": "An early-exit neural architecture with learnable confidence thresholds, containerized and orchestrated for real-time medical predictions.",
+    "bullets": [
+      "Designed a decreasing-width early-exit neural architecture in PyTorch with learnable confidence thresholds and a compound loss balancing accuracy, efficiency, and carbon cost.",
+      "Containerized with Docker, authored Kubernetes manifests (Deployments, HPA, liveness probes, PVC), and streamed real-time predictions via FastAPI and WebSockets.",
+      "Used a dual learning-rate optimizer strategy, training model weights and learnable exit thresholds at separate rates to prevent routing collapse during early training."
+    ],
+    "link": ""
+  },
+  {
+    "title": "Co-Evolutionary Market Simulation",
+    "tech": ["TensorFlow", "Keras", "NumPy", "Pandas"],
+    "dates": "Aug. — Oct. 2025",
+    "description": "A bid-ask market simulation where a Double DQN agent quotes spreads against an evolving population over real OHLCV data.",
+    "bullets": [
+      "Built a bid-ask market simulation where a Double DQN agent quotes spreads against an EGT population evolving via replicator dynamics over real OHLCV data.",
+      "Implemented a hybrid reward signal combining PnL, normalized returns, inventory risk penalties, and mean-reversion incentives to enforce market-neutral behavior.",
+      "Computed post-simulation performance analytics including annualized Sharpe ratio, max drawdown, and return distribution skew/kurtosis to evaluate strategy robustness."
+    ],
+    "link": ""
+  },
+  {
+    "title": "Distributed Network Intrusion Detection System",
+    "tech": ["Node.js", "Express", "Linux", "OCI"],
+    "dates": "Sept. 2025",
+    "description": "A honeypot-based NIDS deploying traps on HTTP, FTP, SSH, and UDP ports with real-time remote monitoring.",
+    "bullets": [
+      "Built a honeypot-based NIDS in Node.js, deploying traps on HTTP, FTP, SSH, and UDP ports with regex detection for SQLi, XSS, directory traversal, brute force, and RCE.",
+      "Streamed classified threat events to a centralized OCI-hosted Express dashboard for real-time remote monitoring from any browser.",
+      "Designed protocol-specific traps for HTTP, FTP, SSH, and UDP, each parsing different payloads (URLs, credentials, handshake banners, raw datagrams) to maximize detection coverage."
+    ],
+    "link": ""
+  }
+]

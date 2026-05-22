@@ -1,0 +1,13 @@
+[
+  {
+    "role": "Software Development Engineering Intern",
+    "company": "Twin Brain, Evu",
+    "location": "Remote",
+    "dates": "Jun. 2025 — Aug. 2025",
+    "bullets": [
+      "Built backend services integrating AI trading systems with external broker APIs, handling high-throughput simulation workloads during live market hours.",
+      "Implemented real-time health telemetry dashboards and automated anomaly alerts, reducing incident response time during simulation runs.",
+      "Verified data pipeline outputs and model predictions using internal reconciliation tooling to ensure consistency across trading environments."
+    ]
+  }
+]

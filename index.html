@@ -1,198 +1,143 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rithwak Somepalli — Software Engineer</title>
+  <meta name="description" content="Portfolio of Rithwak Somepalli, a Software Engineer specializing in cloud infrastructure, machine learning, and full-stack development." />
+  <meta name="author" content="Rithwak Somepalli" />
+  <meta property="og:title" content="Rithwak Somepalli — Software Engineer" />
+  <meta property="og:description" content="Portfolio of Rithwak Somepalli, a Software Engineer specializing in cloud infrastructure, machine learning, and full-stack development." />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+</head>
+<body>
+  <!-- Loading Overlay -->
+  <div class="loading-overlay" id="loading-overlay">
+    <div class="loader"></div>
+  </div>
 
-    <title>Rithwak Somepalli — Portfolio</title>
-    <meta
-      name="description"
-      content="AI/ML and Full-Stack Developer Portfolio"
-    />
-    <meta name="author" content="Rithwak Somepalli" />
+  <!-- Cursor Glow -->
+  <div class="cursor-glow" id="cursor-glow"></div>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-
-  <body>
-    <div id="scroll-progress"></div>
-    <div id="cursor"></div>
-    <div id="cursor-follower"></div>
-    <canvas id="canvas-bg"></canvas>
-    <!-- Navigation -->
-    <header class="site-header">
-      <nav class="container nav">
-        <a href="#" class="brand">
-          <span class="brand-mark">RS</span>
-          <span class="brand-name">Rithwak</span>
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a class="nav-logo" href="#hero" id="nav-logo">Rithwak</a>
+      <div class="nav-links" id="nav-links">
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="nav-cta">
+          <span class="cta-icon">✦</span> Contact
         </a>
-
-        <div class="nav-right">
-          <ul class="nav-links" id="navLinks">
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-
-          <button
-            class="theme-toggle"
-            id="themeToggle"
-            aria-label="Toggle Dark/Light Mode"
-          >
-            <!-- Icon injected via JS -->
-          </button>
-
-          <button
-            class="nav-toggle"
-            id="navToggle"
-            aria-label="Toggle navigation"
-          >
-            ☰
-          </button>
-        </div>
-      </nav>
-    </header>
-
-    <main>
-      <!-- Hero Section -->
-      <section class="hero active" id="home">
-        <!-- Added active class for immediate visibility -->
-        <div class="container hero-inner">
-          <div class="hero-copy">
-            <h1 id="heroName">Loading...</h1>
-            <p class="subtitle" id="heroTitle">...</p>
-            <p class="muted" id="heroLocation">...</p>
-
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="#projects">View Projects</a>
-              <a class="btn btn-ghost" id="resumeBtn" href="#" target="_blank"
-                >Download Resume</a
-              >
-            </div>
-
-            <div class="quick-links" style="margin-top: 2rem">
-              <a
-                id="githubLink"
-                href="#"
-                target="_blank"
-                style="margin-right: 1rem"
-                >GitHub</a
-              >
-              <a id="linkedinLink" href="#" target="_blank">LinkedIn</a>
-            </div>
-          </div>
-
-          <div class="hero-card">
-            <div class="hero-summary" id="heroSummary">
-              <!-- Injected via JS -->
-              <div class="skeleton skeleton-text"></div>
-              <div class="skeleton skeleton-text"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Experience Section -->
-      <section id="experience">
-        <div class="container">
-          <h2>Experience</h2>
-          <div class="card-grid" id="experienceContainer">
-            <!-- Skeletons for loading state -->
-            <div class="card skeleton-card skeleton"></div>
-            <div class="card skeleton-card skeleton"></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Projects Section -->
-      <section id="projects">
-        <div class="container">
-          <h2>Projects</h2>
-          <div class="card-grid" id="projectsContainer">
-            <div class="card skeleton-card skeleton"></div>
-            <div class="card skeleton-card skeleton"></div>
-            <div class="card skeleton-card skeleton"></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Skills Section -->
-      <section id="skills">
-        <div class="container">
-          <h2>Technical Skills</h2>
-          <div class="pill-grid" id="skillsContainer">
-            <div
-              class="skeleton"
-              style="width: 100px; height: 40px; border-radius: 50px"
-            ></div>
-            <div
-              class="skeleton"
-              style="width: 120px; height: 40px; border-radius: 50px"
-            ></div>
-            <div
-              class="skeleton"
-              style="width: 80px; height: 40px; border-radius: 50px"
-            ></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Certifications Section -->
-      <section id="certifications">
-        <div class="container">
-          <h2>Certifications</h2>
-          <div class="card-grid" id="certsContainer">
-            <div class="card skeleton-card skeleton"></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Education Section -->
-      <section id="education">
-        <div class="container">
-          <h2>Education</h2>
-          <div class="card-grid" id="educationContainer">
-            <div class="card skeleton-card skeleton"></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Contact Section -->
-      <section id="contact">
-        <div class="container">
-          <h2>Get in Touch</h2>
-          <div class="contact-grid" id="contactContainer">
-            <div class="contact-card skeleton-card skeleton"></div>
-            <div class="contact-card skeleton-card skeleton"></div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <button id="backToTop" class="back-to-top" aria-label="Back to Top">
-      ↑
-    </button>
-
-    <footer class="site-footer">
-      <div class="container">
-        <p class="muted">
-          © <span id="year"></span> Rithwak Somepalli. All rights reserved.
-        </p>
       </div>
-    </footer>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
 
-    <script src="script.js"></script>
-  </body>
+  <!-- ===== HERO / INTRO ===== -->
+  <section class="section" id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <p class="hero-greeting" id="hero-greeting">
+          <!-- Populated by JS from intro.json -->
+        </p>
+        <h1 class="hero-headline" id="hero-headline">
+          <!-- Populated by JS from intro.json -->
+        </h1>
+        <p class="hero-tagline" id="hero-tagline">
+          <!-- Populated by JS from intro.json -->
+        </p>
+        <div class="hero-actions reveal reveal-delay-2" style="margin-top: 32px;">
+          <a href="RS_resume.pdf" target="_blank" class="nav-cta" download>
+            <span class="cta-icon">📄</span> Download Resume
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Career</span>
+        <h2 class="section-title">Experience</h2>
+      </div>
+      <div id="experience-list">
+        <!-- Populated by JS from experience.json -->
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ===== PROJECTS ===== -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Work</span>
+        <h2 class="section-title">Some works I'm proud of</h2>
+        <p class="section-subtitle">super proud of...</p>
+      </div>
+      <div class="projects-grid" id="projects-grid">
+        <!-- Populated by JS from projects.json -->
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Who I Am</span>
+        <h2 class="section-title">Rithwak is all about...</h2>
+      </div>
+      <div class="about-grid" id="about-grid">
+        <!-- Populated by JS from about.json -->
+      </div>
+
+      <!-- Skills Marquee -->
+      <div class="skills-marquee-container reveal">
+        <div class="skills-marquee" id="skills-marquee">
+          <!-- Populated by JS from config.json skills -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="contact-content">
+        <div class="contact-left reveal">
+          <span class="section-label">Get in Touch</span>
+          <h2 class="section-title">Contact Me</h2>
+          <p class="contact-tagline">I don't bite...</p>
+          <a class="contact-email" id="contact-email" href="mailto:srithwak@gmail.com">srithwak@gmail.com</a>
+        </div>
+        <div class="contact-social reveal reveal-delay-2" id="contact-social">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+      <div class="footer-copyright" id="footer-copyright">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
 </html>
