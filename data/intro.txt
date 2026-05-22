@@ -1,3 +1,0 @@
-Hi, Rithwak here and I'm a...
-Software Engineer building systems that think, scale, and defend — from AI trading pipelines to cloud-native infrastructure and network security.
-I design for business impact, engineering rigor, and clarity in every system.
