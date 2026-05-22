@@ -31,20 +31,21 @@
   }
 
   // ── Apply Colors from Config ──
-  function applyColors(colors) {
+  function applyColors(colors, theme) {
+    const activeColors = colors[theme] || colors.dark || colors;
     const root = document.documentElement.style;
-    root.setProperty('--primary', colors.primary);
-    root.setProperty('--primary-dark', colors.primaryDark);
-    root.setProperty('--neutral', colors.neutral);
-    root.setProperty('--surface', colors.surface);
-    if (colors.background) root.setProperty('--bg', colors.background);
-    if (colors.backgroundAlt) root.setProperty('--bg-alt', colors.backgroundAlt);
-    if (colors.textPrimary) root.setProperty('--text-primary', colors.textPrimary);
-    if (colors.textSecondary) root.setProperty('--text-secondary', colors.textSecondary);
-    if (colors.cardBg) root.setProperty('--card-bg', colors.cardBg);
-    if (colors.cardBorder) root.setProperty('--card-border', colors.cardBorder);
-    if (colors.glassBg) root.setProperty('--glass-bg', colors.glassBg);
-    if (colors.glassBorder) root.setProperty('--glass-border', colors.glassBorder);
+    root.setProperty('--primary', activeColors.primary);
+    root.setProperty('--primary-dark', activeColors.primaryDark);
+    root.setProperty('--neutral', activeColors.neutral);
+    root.setProperty('--surface', activeColors.surface);
+    if (activeColors.background) root.setProperty('--bg', activeColors.background);
+    if (activeColors.backgroundAlt) root.setProperty('--bg-alt', activeColors.backgroundAlt);
+    if (activeColors.textPrimary) root.setProperty('--text-primary', activeColors.textPrimary);
+    if (activeColors.textSecondary) root.setProperty('--text-secondary', activeColors.textSecondary);
+    if (activeColors.cardBg) root.setProperty('--card-bg', activeColors.cardBg);
+    if (activeColors.cardBorder) root.setProperty('--card-border', activeColors.cardBorder);
+    if (activeColors.glassBg) root.setProperty('--glass-bg', activeColors.glassBg);
+    if (activeColors.glassBorder) root.setProperty('--glass-border', activeColors.glassBorder);
   }
 
   // ── Populate Hero / Intro ──
@@ -135,22 +136,55 @@
     `).join('');
   }
 
+  const ICON_MAP = {
+    engineering: `
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="3"></circle>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+      </svg>
+    `,
+    ai: `
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="5" r="2.5"></circle>
+        <circle cx="5" cy="18" r="2.5"></circle>
+        <circle cx="19" cy="18" r="2.5"></circle>
+        <line x1="12" y1="7.5" x2="5" y2="15.5"></line>
+        <line x1="12" y1="7.5" x2="19" y2="15.5"></line>
+        <line x1="7.5" y1="18" x2="16.5" y2="18"></line>
+      </svg>
+    `,
+    security: `
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+      </svg>
+    `,
+    growth: `
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+        <polyline points="16 7 22 7 22 13"></polyline>
+      </svg>
+    `
+  };
+
   // ── Populate About ──
   function populateAbout(aboutData) {
     const grid = $('#about-grid');
     if (!grid) return;
 
-    grid.innerHTML = aboutData.map((card, i) => `
-      <div class="about-card reveal reveal-delay-${(i % 4) + 1}">
-        <div class="about-card-header">
-          <div class="about-icon">${card.icon}</div>
-          <div class="about-card-title" style="color: ${card.color}">${card.title}</div>
+    grid.innerHTML = aboutData.map((card, i) => {
+      const svgIcon = ICON_MAP[card.icon] || card.icon;
+      return `
+        <div class="about-card reveal reveal-delay-${(i % 4) + 1}">
+          <div class="about-card-header">
+            <div class="about-icon">${svgIcon}</div>
+            <div class="about-card-title" style="color: ${card.color}">${card.title}</div>
+          </div>
+          <div class="about-bullets">
+            ${card.bullets.map(b => `<div class="about-bullet">${b}</div>`).join('')}
+          </div>
         </div>
-        <div class="about-bullets">
-          ${card.bullets.map(b => `<div class="about-bullet">${b}</div>`).join('')}
-        </div>
-      </div>
-    `).join('');
+      `;
+    }).join('');
   }
 
   // ── Populate Skills Marquee ──
@@ -295,6 +329,29 @@
     });
   }
 
+  // ── Theme Switcher ──
+  function initTheme(config) {
+    const toggleBtn = $('#theme-toggle');
+    if (!toggleBtn) return;
+
+    // Get initial theme preference
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+    let currentTheme = savedTheme || (systemPrefersLight ? 'light' : 'dark');
+
+    // Set theme attribute on document element
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    applyColors(config.colors, currentTheme);
+
+    toggleBtn.addEventListener('click', () => {
+      currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      document.documentElement.setAttribute('data-theme', currentTheme);
+      applyColors(config.colors, currentTheme);
+      localStorage.setItem('theme', currentTheme);
+    });
+  }
+
   // ── Main Init ──
   async function init() {
     try {
@@ -307,8 +364,8 @@
         fetchJSON('about.json'),
       ]);
 
-      // Apply theme colors
-      applyColors(config.colors);
+      // Init theme switcher and apply initial theme
+      initTheme(config);
 
       // Update page meta
       document.title = config.meta.title;

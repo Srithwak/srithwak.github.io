@@ -1,6 +1,6 @@
 [
   {
-    "icon": "⚙️",
+    "icon": "engineering",
     "title": "Engineering & Systems",
     "color": "#D91B24",
     "bullets": [
@@ -10,7 +10,7 @@
     ]
   },
   {
-    "icon": "🧠",
+    "icon": "ai",
     "title": "AI & Machine Learning",
     "color": "#C4C4C4",
     "bullets": [
@@ -20,7 +20,7 @@
     ]
   },
   {
-    "icon": "🛡️",
+    "icon": "security",
     "title": "Security & Defense",
     "color": "#761F21",
     "bullets": [
@@ -30,7 +30,7 @@
     ]
   },
   {
-    "icon": "🚀",
+    "icon": "growth",
     "title": "Growth & Curiosity",
     "color": "#D91B24",
     "bullets": [

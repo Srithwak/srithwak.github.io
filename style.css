@@ -58,6 +58,7 @@ body {
   line-height: 1.7;
   overflow-x: hidden;
   position: relative;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 /* Subtle grain texture overlay */
@@ -261,6 +262,88 @@ ul {
   transform: translateX(2px) translateY(-2px);
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* =============================================
+   THEME TOGGLE BUTTON
+   ============================================= */
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--card-border);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  color: var(--text-secondary);
+  transition: all var(--transition-smooth);
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+  background: rgba(217, 27, 36, 0.08);
+  transform: rotate(15deg);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  transition: transform var(--transition-smooth), opacity var(--transition-smooth);
+  stroke: currentColor;
+}
+
+/* Default state (dark mode): Sun icon is hidden, Moon icon is visible */
+.theme-toggle .sun-icon {
+  opacity: 0;
+  transform: scale(0.5) rotate(-90deg);
+}
+
+.theme-toggle .moon-icon {
+  opacity: 1;
+  transform: scale(1) rotate(0);
+}
+
+/* Light mode state: Sun icon is visible, Moon is hidden */
+[data-theme="light"] .theme-toggle .sun-icon {
+  opacity: 1;
+  transform: scale(1) rotate(0);
+}
+
+[data-theme="light"] .theme-toggle .moon-icon {
+  opacity: 0;
+  transform: scale(0.5) rotate(90deg);
+}
+
+/* =============================================
+   LIGHT MODE OVERRIDES
+   ============================================= */
+[data-theme="light"] body::before {
+  opacity: 0.015;
+}
+
+[data-theme="light"] .navbar.scrolled {
+  background: rgba(250, 246, 246, 0.85);
+}
+
+[data-theme="light"] .nav-links {
+  background: rgba(250, 246, 246, 0.97);
+}
+
+[data-theme="light"] .cursor-glow {
+  background: radial-gradient(circle, rgba(217, 27, 36, 0.07) 0%, transparent 70%);
+}
+
 /* Mobile hamburger */
 .nav-toggle {
   display: none;
@@ -416,7 +499,7 @@ ul {
 .stat-card:hover {
   border-color: var(--glass-border);
   background: var(--glass-bg);
-  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
 }
 
 .stat-value {
@@ -470,8 +553,8 @@ ul {
 
 .experience-card:hover {
   border-color: var(--glass-border);
-  transform: translateY(-2px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  background: var(--glass-bg);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
 }
 
 .exp-header {
@@ -575,8 +658,8 @@ ul {
 
 .project-card:hover {
   border-color: var(--glass-border);
-  transform: translateY(-4px);
-  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35);
+  background: var(--glass-bg);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
 }
 
 .project-card:hover::after {
@@ -691,8 +774,8 @@ ul {
 
 .about-card:hover {
   border-color: var(--glass-border);
-  transform: translateY(-4px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  background: var(--glass-bg);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
 }
 
 .about-card-header {
@@ -818,10 +901,11 @@ ul {
 
 .contact-content {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 48px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  text-align: center;
 }
 
 .contact-left {
@@ -839,20 +923,29 @@ ul {
 .contact-email {
   font-family: var(--font-mono);
   font-size: 1rem;
-  color: var(--primary);
+  color: var(--text-primary);
+  background: transparent;
+  border: 1px solid var(--card-border);
+  padding: 12px 32px;
+  border-radius: 100px;
   margin-top: 24px;
-  display: inline-block;
-  transition: color var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-smooth);
 }
 
 .contact-email:hover {
-  color: var(--neutral);
+  border-color: var(--primary);
+  background: rgba(217, 27, 36, 0.08);
+  color: var(--primary);
 }
 
 .contact-social {
   display: flex;
   gap: 20px;
   align-items: center;
+  justify-content: center;
 }
 
 .social-link {

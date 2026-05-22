@@ -1,17 +1,33 @@
 {
   "colors": {
-    "primary": "#D91B24",
-    "primaryDark": "#761F21",
-    "neutral": "#C4C4C4",
-    "surface": "#504141",
-    "background": "#0E0B0B",
-    "backgroundAlt": "#1A1414",
-    "textPrimary": "#F2EDED",
-    "textSecondary": "#A89E9E",
-    "cardBg": "rgba(80, 65, 65, 0.25)",
-    "cardBorder": "rgba(196, 196, 196, 0.12)",
-    "glassBg": "rgba(26, 20, 20, 0.65)",
-    "glassBorder": "rgba(217, 27, 36, 0.15)"
+    "dark": {
+      "primary": "#D91B24",
+      "primaryDark": "#761F21",
+      "neutral": "#C4C4C4",
+      "surface": "#504141",
+      "background": "#0E0B0B",
+      "backgroundAlt": "#1A1414",
+      "textPrimary": "#F2EDED",
+      "textSecondary": "#A89E9E",
+      "cardBg": "rgba(80, 65, 65, 0.25)",
+      "cardBorder": "rgba(196, 196, 196, 0.12)",
+      "glassBg": "rgba(26, 20, 20, 0.65)",
+      "glassBorder": "rgba(217, 27, 36, 0.15)"
+    },
+    "light": {
+      "primary": "#D91B24",
+      "primaryDark": "#A3141B",
+      "neutral": "#5A5252",
+      "surface": "#EAE3E3",
+      "background": "#FAF6F6",
+      "backgroundAlt": "#F2EBEB",
+      "textPrimary": "#1A1414",
+      "textSecondary": "#5C5252",
+      "cardBg": "rgba(80, 65, 65, 0.05)",
+      "cardBorder": "rgba(80, 65, 65, 0.12)",
+      "glassBg": "rgba(250, 246, 246, 0.85)",
+      "glassBorder": "rgba(217, 27, 36, 0.2)"
+    }
   },
   "contact": {
     "email": "srithwak@gmail.com",
