@@ -54,10 +54,11 @@
     const greetingEl = $('#hero-greeting');
     if (greetingEl && introData.greeting) {
       // Highlight the name
-      const name = config.meta.name.split(' ')[0]; // "Rithwak"
+      const fullName = config.meta.name; // "Rithwak Somepalli"
+      const firstName = fullName.split(' ')[0]; // "Rithwak"
       greetingEl.innerHTML = introData.greeting.replace(
-        name,
-        `<span class="name-highlight">${name}</span>`
+        firstName,
+        `<span class="name-highlight">${firstName}</span>`
       );
     }
 
@@ -384,20 +385,32 @@
       initNavbar();
       initCursorGlow();
 
-      // Small delay for paint, then reveal and start scroll observer
-      requestAnimationFrame(() => {
+      // Wait for the loader progress animation to finish (1.4s + 0.3s delay = ~1.7s total)
+      // Then fade out the overlay and reveal page content
+      const loaderDuration = 1800; // ms — matches CSS loader-progress + delay
+      setTimeout(() => {
         const overlay = $('#loading-overlay');
-        if (overlay) overlay.classList.add('hidden');
-
-        // Init scroll reveal after content is in DOM
-        setTimeout(initScrollReveal, 100);
-      });
+        if (overlay) {
+          overlay.classList.add('fade-out');
+          // Wait for overlay fade-out animation to end
+          overlay.addEventListener('animationend', () => {
+            overlay.style.display = 'none';
+            document.body.classList.add('loaded');
+            // Init scroll reveal after hero animations kick off
+            setTimeout(initScrollReveal, 200);
+          }, { once: true });
+        }
+      }, loaderDuration);
 
     } catch (err) {
       console.error('Portfolio init error:', err);
       // Still hide loader on error
       const overlay = $('#loading-overlay');
-      if (overlay) overlay.classList.add('hidden');
+      if (overlay) {
+        overlay.style.display = 'none';
+      }
+      document.body.classList.add('loaded');
+      setTimeout(initScrollReveal, 100);
     }
   }
 
