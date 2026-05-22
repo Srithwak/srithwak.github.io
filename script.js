@@ -11,6 +11,10 @@
 
   const BASE = './data/';
 
+  // ── Global motion preference ──
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
+
   // ── Utility: Fetch JSON ──
   async function fetchJSON(path) {
     const res = await fetch(`${BASE}${path}?t=${Date.now()}`);
@@ -62,12 +66,10 @@
       );
     }
 
-    // Line 2: main headline
+    // Line 2: main headline — split into per-word spans for stagger animation
     const headlineEl = $('#hero-headline');
     if (headlineEl && introData.headline) {
-      // Make key words accent-colored for visual punch
-      // Find the first clause and style keywords
-      headlineEl.innerHTML = styleHeadline(introData.headline);
+      headlineEl.innerHTML = styleHeadlineWithWords(introData.headline);
     }
 
     // Line 3: tagline
@@ -77,16 +79,15 @@
     }
   }
 
-  function styleHeadline(text) {
-    // Bold the role-like phrases, dim the connector words
+  function styleHeadlineWithWords(text) {
+    // Split into words, wrap each in a span with stagger delay
     const connectors = ['that', 'with', 'and', 'from', 'to', 'the', 'in', 'for'];
     const words = text.split(' ');
-    return words.map(word => {
+    return words.map((word, i) => {
       const clean = word.replace(/[^a-zA-Z]/g, '').toLowerCase();
-      if (connectors.includes(clean)) {
-        return `<span class="dim">${word}</span>`;
-      }
-      return word;
+      const delay = 0.3 + (i * 0.04); // Stagger starting after container fade-in
+      const dimClass = connectors.includes(clean) ? ' dim' : '';
+      return `<span class="word${dimClass}" style="animation-delay: ${delay}s">${word}</span>`;
     }).join(' ');
   }
 
@@ -98,7 +99,8 @@
     if (!container) return;
 
     container.innerHTML = experiences.map(exp => `
-      <div class="experience-card reveal">
+      <div class="experience-card tilt-card reveal-scale">
+        <div class="tilt-glow"></div>
         <div class="exp-header">
           <div>
             <div class="exp-role">${exp.role}</div>
@@ -122,7 +124,8 @@
     if (!grid) return;
 
     grid.innerHTML = projects.map((proj, i) => `
-      <div class="project-card reveal reveal-delay-${(i % 4) + 1}">
+      <div class="project-card tilt-card reveal-scale reveal-delay-${(i % 4) + 1}">
+        <div class="tilt-glow"></div>
         <div class="project-title">${proj.title}</div>
         <div class="project-dates">${proj.dates}</div>
         <div class="project-tech">
@@ -175,7 +178,8 @@
     grid.innerHTML = aboutData.map((card, i) => {
       const svgIcon = ICON_MAP[card.icon] || card.icon;
       return `
-        <div class="about-card reveal reveal-delay-${(i % 4) + 1}">
+        <div class="about-card tilt-card reveal-scale reveal-delay-${(i % 4) + 1}">
+          <div class="tilt-glow"></div>
           <div class="about-card-header">
             <div class="about-icon">${svgIcon}</div>
             <div class="about-card-title" style="color: ${card.color}">${card.title}</div>
@@ -219,7 +223,7 @@
 
       if (config.contact.github) {
         links.push(`
-          <a class="social-link" href="${config.contact.github}" target="_blank" rel="noopener" aria-label="GitHub">
+          <a class="social-link magnetic" href="${config.contact.github}" target="_blank" rel="noopener" aria-label="GitHub">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
           </a>
         `);
@@ -227,7 +231,7 @@
 
       if (config.contact.linkedin) {
         links.push(`
-          <a class="social-link" href="${config.contact.linkedin}" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <a class="social-link magnetic" href="${config.contact.linkedin}" target="_blank" rel="noopener" aria-label="LinkedIn">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           </a>
         `);
@@ -257,7 +261,8 @@
       { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
     );
 
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    // Observe all reveal variants
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-scale').forEach(el => observer.observe(el));
   }
 
   // ── Navbar Scroll Effect ──
@@ -313,13 +318,13 @@
     }
   }
 
-  // ── Cursor Glow Effect ──
+  // ── Cursor Glow Effect (Enhanced — reactive to content) ──
   function initCursorGlow() {
     const glow = $('#cursor-glow');
     if (!glow) return;
 
     // Only on desktop
-    if (window.matchMedia('(max-width: 768px)').matches) {
+    if (isTouchDevice || window.matchMedia('(max-width: 768px)').matches) {
       glow.style.display = 'none';
       return;
     }
@@ -327,6 +332,192 @@
     document.addEventListener('mousemove', (e) => {
       glow.style.left = e.clientX + 'px';
       glow.style.top = e.clientY + 'px';
+    });
+
+    // Reactive glow: expand on cards, contract on interactive elements
+    document.addEventListener('mouseover', (e) => {
+      const card = e.target.closest('.experience-card, .project-card, .about-card');
+      const interactive = e.target.closest('.nav-cta, .social-link, .theme-toggle, .contact-email');
+
+      glow.classList.remove('cursor-glow--expand', 'cursor-glow--focus');
+
+      if (card) {
+        glow.classList.add('cursor-glow--expand');
+      } else if (interactive) {
+        glow.classList.add('cursor-glow--focus');
+      }
+    });
+  }
+
+  // ── Magnetic Hover Effect ──
+  function initMagneticElements() {
+    if (prefersReducedMotion || isTouchDevice) return;
+
+    // Wait for DOM to be populated, then bind
+    setTimeout(() => {
+      const magneticEls = document.querySelectorAll('.magnetic');
+
+      magneticEls.forEach(el => {
+        el.addEventListener('mousemove', (e) => {
+          const rect = el.getBoundingClientRect();
+          const centerX = rect.left + rect.width / 2;
+          const centerY = rect.top + rect.height / 2;
+          const dx = (e.clientX - centerX) * 0.3;
+          const dy = (e.clientY - centerY) * 0.3;
+
+          // Cap displacement at 8px
+          const maxDisp = 8;
+          const clampedX = Math.max(-maxDisp, Math.min(maxDisp, dx));
+          const clampedY = Math.max(-maxDisp, Math.min(maxDisp, dy));
+
+          el.style.transform = `translate(${clampedX}px, ${clampedY}px)`;
+        });
+
+        el.addEventListener('mouseleave', () => {
+          el.style.transform = 'translate(0, 0)';
+        });
+      });
+    }, 100);
+  }
+
+  // ── 3D Card Tilt Effect ──
+  function initCardTilt() {
+    if (prefersReducedMotion || isTouchDevice) return;
+
+    // Wait for DOM to be populated, then bind
+    setTimeout(() => {
+      const cards = document.querySelectorAll('.tilt-card');
+
+      cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+
+          // Max ±3° rotation
+          const rotateY = ((x - centerX) / centerX) * 3;
+          const rotateX = ((centerY - y) / centerY) * 3;
+
+          card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+          // Update light source position
+          const percentX = (x / rect.width) * 100;
+          const percentY = (y / rect.height) * 100;
+          card.style.setProperty('--mouse-x', percentX + '%');
+          card.style.setProperty('--mouse-y', percentY + '%');
+        });
+
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'perspective(800px) rotateX(0) rotateY(0)';
+        });
+      });
+    }, 100);
+  }
+
+  // ── Scroll Progress Indicator ──
+  function initScrollProgress() {
+    const progressBar = $('#scroll-progress');
+    if (!progressBar || prefersReducedMotion) return;
+
+    function updateProgress() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? scrollTop / docHeight : 0;
+      progressBar.style.transform = `scaleX(${progress})`;
+      requestAnimationFrame(updateProgress);
+    }
+
+    requestAnimationFrame(updateProgress);
+  }
+
+  // ── Text Decode Effect on Section Titles ──
+  function initTextDecode() {
+    if (prefersReducedMotion) return;
+
+    const chars = '!<>-_\\/[]{}—=+*^?#_';
+
+    class TextDecoder {
+      constructor(el) {
+        this.el = el;
+        this.originalText = el.textContent;
+        this.decoded = false;
+      }
+
+      decode() {
+        if (this.decoded) return;
+        this.decoded = true;
+
+        const text = this.originalText;
+        const length = text.length;
+        let output = new Array(length).fill(null);
+        let resolvedCount = 0;
+
+        // Start with all scrambled
+        this.el.textContent = text.split('').map(c => c === ' ' ? ' ' : chars[Math.floor(Math.random() * chars.length)]).join('');
+
+        const resolveNext = () => {
+          if (resolvedCount >= length) return;
+
+          // Resolve 1-3 characters at a time for speed
+          const batch = Math.min(2, length - resolvedCount);
+          for (let b = 0; b < batch; b++) {
+            // Find next unresolved non-space character
+            let idx = resolvedCount;
+            while (idx < length && text[idx] === ' ') {
+              output[idx] = ' ';
+              idx++;
+              resolvedCount++;
+            }
+            if (idx < length) {
+              output[idx] = text[idx];
+              resolvedCount = idx + 1;
+            }
+          }
+
+          // Build current display string
+          let display = '';
+          for (let i = 0; i < length; i++) {
+            if (output[i] !== null) {
+              display += output[i];
+            } else if (text[i] === ' ') {
+              display += ' ';
+              output[i] = ' ';
+            } else {
+              display += chars[Math.floor(Math.random() * chars.length)];
+            }
+          }
+          this.el.textContent = display;
+
+          if (resolvedCount < length) {
+            setTimeout(resolveNext, 25 + Math.random() * 20);
+          } else {
+            this.el.textContent = text;
+          }
+        };
+
+        // Small delay before starting decode
+        setTimeout(resolveNext, 100);
+      }
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const decoder = new TextDecoder(entry.target);
+            decoder.decode();
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    // Observe section titles (but not the hero headline — that has its own animation)
+    document.querySelectorAll('#experience .section-title, #projects .section-title, #about .section-title, #contact .section-title').forEach(el => {
+      observer.observe(el);
     });
   }
 
@@ -384,6 +575,7 @@
       // Init interactions
       initNavbar();
       initCursorGlow();
+      initScrollProgress();
 
       // Wait for the loader progress animation to finish (1.4s + 0.3s delay = ~1.7s total)
       // Then fade out the overlay and reveal page content
@@ -397,7 +589,12 @@
             overlay.style.display = 'none';
             document.body.classList.add('loaded');
             // Init scroll reveal after hero animations kick off
-            setTimeout(initScrollReveal, 200);
+            setTimeout(() => {
+              initScrollReveal();
+              initMagneticElements();
+              initCardTilt();
+              initTextDecode();
+            }, 200);
           }, { once: true });
         }
       }, loaderDuration);
@@ -410,7 +607,12 @@
         overlay.style.display = 'none';
       }
       document.body.classList.add('loaded');
-      setTimeout(initScrollReveal, 100);
+      setTimeout(() => {
+        initScrollReveal();
+        initMagneticElements();
+        initCardTilt();
+        initTextDecode();
+      }, 100);
     }
   }
 
