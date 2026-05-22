@@ -13,14 +13,14 @@
 
   // ── Utility: Fetch JSON ──
   async function fetchJSON(path) {
-    const res = await fetch(BASE + path);
+    const res = await fetch(`${BASE}${path}?t=${Date.now()}`);
     if (!res.ok) throw new Error(`Failed to load ${path}: ${res.status}`);
     return res.json();
   }
 
   // ── Utility: Fetch Text ──
   async function fetchText(path) {
-    const res = await fetch(BASE + path);
+    const res = await fetch(`${BASE}${path}?t=${Date.now()}`);
     if (!res.ok) throw new Error(`Failed to load ${path}: ${res.status}`);
     return res.text();
   }
