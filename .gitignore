@@ -6,4 +6,5 @@
 ~$*.docx
 ~$*.doc
 
-.skills
+skills
+skills-lock.json
